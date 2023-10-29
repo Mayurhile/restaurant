@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover">
+    <title>Cafe Store</title>
+    <link rel="icon" href="https://th.bing.com/th/id/OIP.3MCdFdTcKzX8-br6Oz-HvQHaHa?w=195&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+    <link rel="stylesheet" href="/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script>
+        function myFunction(){
+            alert("DONE")
+        }
+    </script> -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#181f21">
+    <link rel="apple-touch-icon" href="images/logo-192.png">
+</head>
+<body>
+
+    <!-- desktop view -->
+    <div class="container" id="container">
+        <div id="menu">
+            <!-- <div class="title">
+                <img src="/images/foodie hunter.png" alt="">
+            </div> -->
+            <div class="menu-item">
+                <a href="">Home</a>
+                <a href="#">Your Orders</a>
+                <a href="#">Your Cart</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <div id="food-container">
+            <div id="header">
+                <div class="add-box">
+                    <img src="images/logo4.PNG" alt="">
+                </div>
+                <div class="util">
+                    <i class="fa fa-search"> Search</i>
+                    <i class="fa fa-cart-plus" id="cart-plus"> 0 Items</i>
+                </div>
+            </div>
+            <div id="food-items" class="d-food-items">
+                <div id="coffee" class="d-coffee">
+                    <p id="category-name">Coffee</p>    
+                </div>
+
+                <div id="cakes" class="d-cakes">
+                    <p id="category-name">cakes</p>    
+                </div>
+
+                <div id="pastries" class="d-pastries">
+                    <p id="category-name">Pastries</p>
+                </div>
+
+                <div id="sandwich" class="d-sandwich">
+                    <p id="category-name">Sandwich</p> 
+                </div>
+
+                <div id="pasta" class="d-pasta">
+                    <p id="category-name">Pasta</p> 
+                </div>
+
+                <div id="french-fries" class="d-french-fries">
+                    <p id="category-name">French Fries</p>
+                </div>
+
+                <div class="contact" id="contact">
+                    <p id="category-name">contact Me!</p>
+                    <form action="#">
+                        <div class="input-box">
+                            <input type="text" placeholder="Full Name">
+                            <input type="email" placeholder="Email Address">
+                        </div>
+            
+                        <div class="input-box">
+                            <input type="number" placeholder="Mobile Number">
+                            <input type="text" placeholder="Email Subject">
+                        </div>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+                        <input type="submit" value="Send Message" class="btn">
+                    </form>
+                </div>
+            </div>
+
+            <div id="cart-page" class="cart-toggle">
+                <p id="cart-title">Cart Items</p>
+                <p id="m-total-amount">Total Amout : 100</p>
+                <table>
+                    <thead>
+                        <td>Item</td>
+                        <td>Name</td>
+                        <td>Quantity</td>
+                        <td>Price</td>
+                    </thead>
+                    <tbody id="table-body">
+                        
+                    </tbody>
+                </table>
+                <div class="btn-box">
+                    <button id="butt" class="cart-btn" onclick="location.href='sepayment.html'">Checkout</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="cart">
+            
+            <div id="category-list">
+                <p class="item-menu">Go For Hunt</p>
+                <div class="border"></div>                
+            </div>
+            <div id="checkout" class="cart-toggle">
+                <p id="total-item">Total Item : 5</p>
+                <p id="total-price"></p>
+                <!-- <p id="delievery">Free delievery on $ 40</p> -->
+                <button id="butt"  class="cart-btn" onclick="location.href='sepayment.html'">Checkout</button>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <!-- mobile view -->    
+    <div id="mobile-view" class="mobile-view">
+        <div class="mobile-top">
+            <div class="logo-box">
+                <img src="images/logo4.png" alt="" id="logo">
+                <i class="fa fa-search your-search"> Search</i>
+            </div>
+            <div class="top-menu">
+                <p class="item-menu">Go For Hunt</p>
+            </div>
+        </div>
+        
+        <div class="item-container">
+            <div class="category-header" id="category-header">  
+            </div>
+
+            <div id="food-items" class="food-items">
+                <div id="coffee" class="m-coffee">
+                    <p id="category-name">Coffee</p>    
+                </div>
+                <div id="cakes" class="m-cakes">
+                    <p id="category-name">Cakes</p>    
+                </div>
+                <div id="pastries" class="m-pastries">
+                    <p id="category-name">Pastries</p>
+                </div>
+                <div id="sandwich" class="m-sandwich">
+                    <p id="category-name">Pure Veg Dishes</p> 
+                </div>
+                <div id="pasta" class="m-pasta">
+                    <p id="category-name">Pasta</p> 
+                </div>
+                <div id="french-fries" class="m-french-fries">
+                    <p id="category-name">French Fries</p>
+                </div>
+            </div>            
+        </div>
+
+        <div class="mobile-footer">
+            <a href="">Home</a>
+            <a href="#">Your Orders</a>
+            <a href="#contact">Contact</a>
+            <i class="fa fa-cart-plus" id="m-cart-plus"> cart</i>
+        </div>
+    </div>
+    
+    <script src="/menu.js" type="module"></script>
+</body>
+</html>

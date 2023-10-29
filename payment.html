@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to bottom, crimson, #FF5733);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .payment-details {
+      text-align: left;
+    }
+
+    .payment-details p {
+      font-weight: bold;
+    }
+
+    .option-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: crimson;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+      transition: background-color 0.3s, transform 0.1s;
+    }
+
+    .option-button:hover {
+      background-color: #FF5733;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+      }
+
+      .option-button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Payment Details</h2>
+    <div class="payment-details">
+      <p>Name: <span id="name">Guest Name</span></p>
+      <p>Phone Number: <span id="phone">Phone Number</span></p>
+      <p>Preferred Time: <span id="time">Time</span></p>
+      <p>Number of Tables: <span id="guestsCount">0</span></p>
+      <p>Total Amount (in Rupees): <span id="totalAmount">0</span></p>
+    </div>
+    <button class="option-button" id="confirmPayment">Confirm Payment</button>
+  </div>
+
+  <script>
+    const guestsCount = document.getElementById("guestsCount");
+    const totalAmount = document.getElementById("totalAmount");
+    const name = document.getElementById("name");
+    const phone = document.getElementById("phone");
+    const time = document.getElementById("time");
+    const confirmPayment = document.getElementById("confirmPayment");
+
+    // Retrieve the guest information from the URL query parameters
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const guests = urlSearchParams.get("guests");
+    const guestName = urlSearchParams.get("name");
+    const guestPhone = urlSearchParams.get("phone");
+    const guestTime = urlSearchParams.get("time");
+
+    guestsCount.textContent = guests;
+    name.textContent = guestName || "Guest Name";
+    phone.textContent = guestPhone || "Phone Number";
+    time.textContent = guestTime || "Time";
+
+    // Calculate total amount and apply fine
+    const finePerGuest = 50;
+    const total = guests * finePerGuest;
+    totalAmount.textContent = total;
+
+    confirmPayment.addEventListener("click", () => {
+      // Handle payment confirmation logic here
+      alert("Payment confirmed!");
+    });
+  </script>
+</body>
+</html>

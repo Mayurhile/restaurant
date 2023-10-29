@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to bottom, crimson, #FF5733);
+      margin: 0;
+      padding:0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .question {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .option-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: crimson;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+      transition: background-color 0.3s, transform 0.1s;
+    }
+
+    .option-button:hover {
+      background-color: #FF5733;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+      }
+
+      .option-button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- <h2>Confirmation</h2> -->
+    <p>Do you want to order food now?<br>The cost for per table is ₹50</p>
+    <button class="option-button" id="yesButton">Yes</button>
+    <button class="option-button" id="noButton">No</button>
+  </div>
+
+  <script>
+    const yesButton = document.getElementById("yesButton");
+    const noButton = document.getElementById("noButton");
+
+    yesButton.addEventListener("click", () => {
+      // Redirect to the payment page
+      window.location.href = "menu.html" + window.location.search;
+    });
+
+    noButton.addEventListener("click", () => {
+      // Redirect to another page or perform an action when "No" is clicked
+      window.location.href = "payment.html" + window.location.search;
+      // Add your logic here
+    });
+  </script>
+</body>
+</html>
